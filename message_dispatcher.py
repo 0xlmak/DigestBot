@@ -2,7 +2,6 @@ import requests
 
 
 def send_msg(message: str) -> None:
-
     apiToken = "TBD"  # set once a telegram bot is created
     chatID = "TBD"  # set once a telegram bot is created
     apiURL = f"https://api.telegram.org/bot{apiToken}/sendMessage"
