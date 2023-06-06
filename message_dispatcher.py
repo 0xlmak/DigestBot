@@ -1,13 +1,11 @@
-import requests
+import telebot
 
 
+# Create a bot
+apiToken = "TBD"  # set once a telegram bot is created
+bot = telebot.TeleBot(apiToken)
+
+@bot.message_handler(commands = ['start'])
 def send_msg(message: str) -> None:
-    apiToken = "TBD"  # set once a telegram bot is created
-    chatID = "TBD"  # set once a telegram bot is created
-    apiURL = f"https://api.telegram.org/bot{apiToken}/sendMessage"
+    bot.send_message(message.chat.id, message, parse_mode="Markdown")
 
-    try:
-        response = requests.post(apiURL, json={"chat_id": chatID, "text": message})
-        print(response.text)
-    except Exception as e:
-        print(e)
