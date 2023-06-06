@@ -4,3 +4,5 @@ lxml
 types-lxml
 beautifulsoup4
 types-beautifulsoup4
+pyTelegramBotAPI
+
