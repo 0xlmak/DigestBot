@@ -2,6 +2,7 @@ from typing import Dict
 from dataclasses import dataclass
 from diskcache import Cache
 import feedparser
+import json
 
 
 @dataclass
@@ -26,22 +27,16 @@ class RSSDataSource:
             tmp["authors"] = [author.name for author in entry.authors]
             tmp["summary"] = entry.summary
             article_list.append(tmp)
-
-        
         articles_details["articles"] = article_list
 
-      
         return articles_details
 
 if __name__ == "__main__":
-    import json
-  
     feed_url = "https://www.jeuneafrique.com/rubriques/politique/feed/"
     ja_feed = RSSDataSource(feed_url)
     data = ja_feed.get_data() 
     
     if data:
-        # printing as a json string with indentation level = 2
-        print(json.dumps(data, indent=2, ensure_ascii=False)) 
+        print(json.dumps(data, indent=2, ensure_ascii=False))
     else:
         print("None")
