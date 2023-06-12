@@ -5,4 +5,5 @@ types-lxml
 beautifulsoup4
 types-beautifulsoup4
 pyTelegramBotAPI
-
+feedparser
+diskcache
