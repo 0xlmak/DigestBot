@@ -31,11 +31,12 @@ class RSSDataSource:
 
         return articles_details
 
+
 if __name__ == "__main__":
     feed_url = "https://www.jeuneafrique.com/rubriques/politique/feed/"
     ja_feed = RSSDataSource(feed_url)
-    data = ja_feed.get_data() 
-    
+    data = ja_feed.get_data()
+
     if data:
         print(json.dumps(data, indent=2, ensure_ascii=False))
     else:
