@@ -1,6 +1,6 @@
-from typing import Dict
+from typing import Dict, List
 from dataclasses import dataclass
-from diskcache import Cache
+#from diskcache import Cache
 import feedparser
 import json
 
@@ -9,7 +9,7 @@ import json
 class RSSDataSource:
     rss_url: str
 
-    def get_data(self) -> Dict[str, str]:
+    def get_data(self) -> Dict[str, List[Dict[str, str]]]:
         feed = feedparser.parse(self.rss_url)
         # dictionary for articles details
         articles_details = {}
