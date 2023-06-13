@@ -6,4 +6,5 @@ beautifulsoup4
 types-beautifulsoup4
 pyTelegramBotAPI
 feedparser
+types-feedparser 
 diskcache
